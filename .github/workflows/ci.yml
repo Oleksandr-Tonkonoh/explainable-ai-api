@@ -31,4 +31,15 @@ jobs:
         run: |
           python -m pytest -v
 
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: action/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          docker build -t explainable-ai .
+
       
